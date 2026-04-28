@@ -1,13 +1,19 @@
 # shaedy Bounty
 
-A CounterStrikeSharp plugin that tracks kill streaks and places bounties on dominant players.
+A CounterStrikeSharp plugin that tracks kill streaks and places bounties on players.
 
 ## Features
 
-- Tracks each player's kill streak per life
-- Announces a bounty when a player reaches 5 kills
-- Awards bonus MMR to whoever takes down a player with an active bounty
-- Integrates with the shaedyRanks point system via `css_ranks_addpoints`
+- Bounty placed after 5 consecutive kills
+- +5 MMR reward for claiming a bounty (integrates with shaedyRanks)
+- Kill streak dots shown on HUD from 3+ kills
+- Bounty warning shown to enemies of the bounty target
+- Streak counter with visual dots and labels
+- Reset on round start
+
+## Dependencies
+
+- [shaedyHudManager](https://github.com/shaedy180/shaedyHudManager) - Centralized HUD overlay manager (must be installed alongside this plugin)
 
 ## Installation
 
@@ -15,7 +21,7 @@ Drop the plugin folder into your CounterStrikeSharp `plugins` directory.
 
 ## Configuration
 
-No config needed. Bounty threshold and reward values are hardcoded.
+No config needed. Kill threshold and bonus points are hardcoded.
 
 ## Support
 
