@@ -13,7 +13,7 @@ A CounterStrikeSharp plugin that tracks kill streaks and places bounties on play
 
 ## Dependencies
 
-- [shaedyHudManager](https://github.com/shaedy180/shaedyHudManager) - Centralized HUD overlay manager (must be installed alongside this plugin)
+- [shaedyHudManager](https://github.com/shaedy180/shaedyHudManager) - Centralized HUD overlay manager (must be installed alongside this plugin, connects via runtime reflection)
 
 ## Installation
 

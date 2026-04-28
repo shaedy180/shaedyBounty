@@ -106,7 +106,7 @@ public class ShaedyBounty : BasePlugin
         html += "<div style='font-size:14px;color:#ccc;margin-top:2px;'>" + streak + "/" + KillsForBounty + " kills" + extraInfo + "</div>";
         html += "</div></body></html>";
 
-        HudManager.Show(player.SteamID, html, HudPriority.Low, 1);
+        HudManagerProxy.Show(player.SteamID, html, HudManagerProxy.Priority.Low, 1);
     }
 
     private void ShowBountyWarning(CCSPlayerController player)
@@ -119,7 +119,7 @@ public class ShaedyBounty : BasePlugin
 
             string html = "<html><body style='margin:0;padding:0;'><div style='text-align:center;font-family:Arial;'><div style='font-size:14px;color:#ff4444;text-shadow:0 0 10px #ff4444;'>!! " + player.PlayerName + " has a bounty! (+" + BonusPoints + " MMR)</div></div></body></html>";
 
-            HudManager.Show(other.SteamID, html, HudPriority.High, 1);
+            HudManagerProxy.Show(other.SteamID, html, HudManagerProxy.Priority.High, 1);
         }
     }
 
@@ -187,7 +187,7 @@ public class ShaedyBounty : BasePlugin
         html += "<div style='font-size:16px;color:#ccc;margin-top:4px;'>Eliminated " + victimName + " - +" + BonusPoints + " MMR</div>";
         html += "</div></body></html>";
 
-        HudManager.Show(attacker.SteamID, html, HudPriority.High, 3);
+        HudManagerProxy.Show(attacker.SteamID, html, HudManagerProxy.Priority.High, 3);
 
         var allPlayers = Utilities.GetPlayers();
         foreach (var p in allPlayers)
@@ -195,7 +195,7 @@ public class ShaedyBounty : BasePlugin
             if (p != attacker && p.IsValid && !p.IsBot)
             {
                 string notifyHtml = "<html><body style='margin:0;padding:0;'><div style='text-align:center;font-family:Arial;'><div style='font-size:16px;color:#ffd700;'>* " + attacker.PlayerName + " claimed the bounty!</div></div></body></html>";
-                HudManager.Show(p.SteamID, notifyHtml, HudPriority.Low, 2);
+                HudManagerProxy.Show(p.SteamID, notifyHtml, HudManagerProxy.Priority.Low, 2);
             }
         }
     }
